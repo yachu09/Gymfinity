@@ -16,13 +16,19 @@ namespace AngularApp5.Server.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<CustomerBasket>> GetBasketById([FromQuery]string id)
+        [HttpGet]
+        public async Task<ActionResult<CustomerBasket>> GetBasketById([FromQuery] string id)
         {
             var basket = await basketRepo.GetBasketAsync(id);
 
             if (basket == null)
             {
-                return Ok(PostBasket(new CustomerBasket(id)));
+                // Tworzymy nowy koszyk, jeśli nie istnieje
+                var newBasket = new CustomerBasket(id);
+                await basketRepo.PostBasket(newBasket);
+
+                // Zwracamy nowo utworzony koszyk
+                return Ok(newBasket);
             }
 
             return Ok(basket);
@@ -30,8 +36,10 @@ namespace AngularApp5.Server.Controllers
         [HttpPost]
         public async Task<ActionResult<CustomerBasket>> PostBasket(CustomerBasket newBasket)
         {
-            basketRepo.PostBasket(newBasket);
-            return Ok(GetBasketById(newBasket.Id));
+            await basketRepo.PostBasket(newBasket);
+
+            // Zwracamy nowo utworzony koszyk
+            return Ok(newBasket);
         }
 
         [HttpPost]
