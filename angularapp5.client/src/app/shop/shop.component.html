@@ -2,14 +2,14 @@
   <div class="row">
 
     <section class="col-3">
-      <h5 class="text-warning ms-3">Sortowanie</h5>
+      <h5 class="ms-3 mt-4 mb-3" style="color: blue; font-size: 1.4em;">Sortowanie</h5>
       <select class="form-select mb-3" (change)="onSortSelected($event)">
         <option *ngFor="let sort of sortOptions" [value]="sort.value">
           {{sort.name}}
         </option>
       </select>
 
-      <h5 class="text-warning ms-3">Marka produktu</h5>
+      <h5 class="ms-3" style="color: blue">Marka produktu</h5>
       <ul class="list-group my-3">
         <li class="list-group-item"
             *ngFor="let brand of brands"
@@ -19,7 +19,7 @@
           {{brand.name}}
         </li>
       </ul>
-      <h5 class="text-warning ms-3">Typ produktu</h5>
+      <h5 class="ms-3" style="color: blue">Typ produktu</h5>
       <ul class="list-group my-3">
         <li class="list-group-item"
             *ngFor="let type of types"
@@ -40,9 +40,9 @@
           [pageNumber]="this.shopParams.pageNumber">
         </app-paging-header>
         <div class="d-flex align-items-center mt-3">
-          <input (keyup.enter)="onSearch()" class="form-control me-2" #search style="width: 300px" placeholder="Search" type="text" />
+          <input (keyup.enter)="onSearch()" class="form-control me-2" #search style="width: 300px" placeholder="Szukaj" type="text" />
           <button (click)="onSearch()" class="btn btn-outline-primary my-2">Szukaj</button>
-          <button (click)="onReset()" class="btn btn-outline-success ms-2 my-2">Reset</button>
+          <button (click)="onReset()" class="btn btn-outline-danger ms-2 my-2">Reset</button>
         </div>
       </div>
 
