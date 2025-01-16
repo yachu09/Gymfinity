@@ -56,8 +56,8 @@ namespace AngularApp5.Server.Controllers
             return Ok(updatedBasket);
         }
 
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteBasketAsync(string id)
+        [HttpDelete]
+        public async Task<IActionResult> DeleteBasketAsync([FromQuery] string id)
         {
             var success = await basketRepo.DeleteBasketAsync(id);
 
