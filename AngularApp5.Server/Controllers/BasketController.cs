@@ -33,6 +33,7 @@ namespace AngularApp5.Server.Controllers
 
             return Ok(basket);
         }
+        //metoda służaca tylko do tworzenia nowego koszyka po wywołaniu GetBasketAsync
         [HttpPost]
         public async Task<ActionResult<CustomerBasket>> PostBasket(CustomerBasket newBasket)
         {
