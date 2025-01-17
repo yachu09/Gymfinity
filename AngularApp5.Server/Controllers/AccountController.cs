@@ -1,9 +1,12 @@
 ﻿using AngularApp5.Server.Dtos;
 using AngularApp5.Server.Errors;
+using AngularApp5.Server.Extensions;
 using AngularApp5.Server.Interfaces;
 using AngularApp5.Server.Models.Identity;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace AngularApp5.Server.Controllers
 {
@@ -21,6 +24,66 @@ namespace AngularApp5.Server.Controllers
             this.userManager = userManager;
             this.signInManager = signInManager;
             this.tokenService = tokenService;
+        }
+
+        [Authorize]
+        [HttpGet]
+        public async Task<ActionResult<UserDto>> GetCurrentUser()
+        {
+            var user = await userManager.FindByEmailFromClaimsPrincipalAsync(HttpContext.User);
+
+            return new UserDto
+            {
+                Email = user.Email,
+                Token = tokenService.CreateToken(user),
+                DisplayName = user.DisplayName
+            };
+        }
+
+        [HttpGet("emailexists")]
+        public async Task<ActionResult<bool>> CheckEmailExistsAsync([FromQuery] string email)
+        {
+            return await userManager.FindByEmailAsync(email) != null;
+        }
+
+        [Authorize]
+        [HttpGet("address")]
+        public async Task<ActionResult<AddressDto>> GetUserAddress()
+        {
+            var user = await userManager.FindUserByClaimsPrincipleWithAddressAsync(HttpContext.User);
+
+            return new AddressDto
+            {
+                FirstName = user.Address.FirstName,
+                LastName = user.Address.LastName,
+                Street = user.Address.Street,
+                City = user.Address.City,
+                State = user.Address.State,
+                Zipcode = user.Address.Zipcode,
+            };
+        }
+
+        [Authorize]
+        [HttpPut("address")]
+        public async Task<ActionResult<AddressDto>> UpdateUserAddress(AddressDto address)
+        {
+            var user = await userManager.FindUserByClaimsPrincipleWithAddressAsync(HttpContext.User);
+
+            user.Address = new Address
+            {
+                FirstName = address.FirstName,
+                LastName = address.LastName,
+                Street = address.Street,
+                City = address.City,
+                State = address.State,
+                Zipcode = address.Zipcode,
+            };
+
+            var result = await userManager.UpdateAsync(user);
+
+            if (result.Succeeded) return Ok(address);
+
+            return BadRequest("Problem updating the user");
         }
 
         [HttpPost("login")]

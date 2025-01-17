@@ -28,6 +28,7 @@ namespace AngularApp5.Server.Extensions
                         .GetBytes(config["Token:Key"])),
                         ValidIssuer = config["Token:Issuer"],
                         ValidateIssuer = true,
+                        ValidateAudience = false
                     };
                 });
 
