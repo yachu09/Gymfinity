@@ -1,1 +1,59 @@
-<p>register works!</p>
+<div class="d-flex justify-content-center mt-5">
+  <div class="col-3">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div class="text-center mb-4">
+        <h1 class="h3 mb-3 font-weight-normal">Rejestracja</h1>
+      </div>
+
+      <div class="form-label-group">
+        <input formControlName="displayName" type="displayName" id="inputdisplayName" class="form-control" placeholder="Nazwa użytkownika">
+        <label for="inputdisplayName">Nazwa użytkownika</label>
+        <span class="text-danger"
+              *ngIf="registerForm.get('displayName')?.invalid
+              && registerForm.get('displayName')?.touched
+              && registerForm.get('displayName')?.errors?.['required']">
+          Nazwa użytkownika jest wymagana
+        </span>
+      </div>
+
+      <div class="form-label-group">
+        <input formControlName="email" type="email" id="inputEmail" class="form-control" placeholder="Adres email">
+        <label for="inputEmail">Adres Email</label>
+        <span class="text-danger"
+              *ngIf="registerForm.get('email')?.invalid
+          && registerForm.get('email')?.touched
+          && registerForm.get('email')?.errors?.['required']">
+          Adres email jest wymagany
+        </span>
+        <span class="text-danger"
+              *ngIf="registerForm.get('email')?.invalid
+          && registerForm.get('email')?.touched
+          && registerForm.get('email')?.errors?.['pattern']">
+          Adres email jest niepoprawny
+        </span>
+      </div>
+
+      <div class="form-label-group">
+        <input formControlName="password" type="password" id="inputPassword" class="form-control" placeholder="Hasło">
+        <label for="inputPassword">Hasło</label>
+        <span class="text-danger"
+              *ngIf="registerForm.get('password')?.invalid
+          && registerForm.get('password')?.touched
+          && registerForm.get('password')?.errors?.['required']">
+          Hasło jest wymagane
+        </span>
+      </div>
+
+      <ul class="text-danger" style="" *ngIf="errors">
+        <li *ngFor="let error of errors">
+          {{ error }}
+        </li>
+      </ul>
+
+      <button [disabled]="registerForm.invalid" class="btn btn-lg btn-primary btn-block" type="submit">Zarejestruj się!</button>
+      <p class="mt-5 mb-3 text-muted text-center">© Gymfinity</p>
+    </form>
+  </div>
+</div>
+
+

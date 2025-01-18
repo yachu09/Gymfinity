@@ -6,7 +6,7 @@
       </div>
 
       <div class="form-label-group">
-        <input formControlName="email" type="email" id="inputEmail" class="form-control" placeholder="Email address">
+        <input formControlName="email" type="email" id="inputEmail" class="form-control" placeholder="Adres Email">
         <label for="inputEmail">Adres Email</label>
         <span class="text-danger"
               *ngIf="loginForm.get('email')?.invalid
@@ -23,7 +23,7 @@
       </div>
 
       <div class="form-label-group">
-        <input formControlName="password" type="password" id="inputPassword" class="form-control" placeholder="Password">
+        <input formControlName="password" type="password" id="inputPassword" class="form-control" placeholder="Hasło">
         <label for="inputPassword">Hasło</label>
         <span class="text-danger"
               *ngIf="loginForm.get('password')?.invalid
@@ -36,15 +36,6 @@
       <p class="mt-5 mb-3 text-muted text-center">© Gymfinity</p>
     </form>
   </div>
-
-  <div class="col-4">
-    <p>Form Status: {{ loginForm.status }}</p>
-    <p>Email Status: {{ loginForm.get('email')?.status }}</p>
-    <p>Email Touched: {{ loginForm.get('email')?.touched }}</p>
-    <p>Email Dirty: {{ loginForm.get('email')?.dirty }}</p>
-    <pre>{{loginForm.value | json}}</pre>
-  </div>
-
 </div>
 
 
