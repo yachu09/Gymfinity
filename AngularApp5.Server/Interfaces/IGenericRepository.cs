@@ -9,5 +9,8 @@ namespace AngularApp5.Server.Interfaces
         Task<T> GetModelWithSpecAsync(ISpecification<T> spec);
         Task<IReadOnlyList<T>> ListWithSpecAsync(ISpecification<T> spec);
         Task<int> CountAsync(ISpecification<T> spec);
+        void Add(T model);
+        void Update(T model);
+        void Delete(T model);
     }
 }

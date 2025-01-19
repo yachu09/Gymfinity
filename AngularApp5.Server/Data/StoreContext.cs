@@ -35,6 +35,12 @@ namespace AngularApp5.Server.Data
 
             //modelBuilder.Entity<Address>().HasNoKey();
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+
+            //nullable PaymentIntent
+            modelBuilder.Entity<Order>()
+                .Property(o => o.PaymentIntentId)
+                .IsRequired(false); // Ustaw jako opcjonalną kolumnę
+
         }
     }
 }

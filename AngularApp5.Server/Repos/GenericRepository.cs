@@ -44,5 +44,21 @@ namespace AngularApp5.Server.Repos
         {
             return SpecificationHandler<T>.GetQuery(_context.Set<T>().AsQueryable(), spec);
         }
+
+        public void Add(T model)
+        {
+            _context.Set<T>().Add(model);
+        }
+
+        public void Update(T model)
+        {
+            _context.Set<T>().Attach(model);
+            _context.Entry(model).State = EntityState.Modified;
+        }
+
+        public void Delete(T model)
+        {
+            _context.Set<T>().Remove(model);
+        }
     }
 }
