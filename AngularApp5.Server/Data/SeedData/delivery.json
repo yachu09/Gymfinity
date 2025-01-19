@@ -1,0 +1,26 @@
+[
+  {
+    "ShortName": "DPD1",
+    "Description": "Najszybszy czas dostawy",
+    "DeliveryTime": "1-2 Dni",
+    "Price": 10
+  },
+  {
+    "ShortName": "DPD2",
+    "Description": "Dostawa do 5 dni ",
+    "DeliveryTime": "2-5 Dni",
+    "Price": 5
+  },
+  {
+    "ShortName": "DPD3",
+    "Description": "Wolno ale tanio",
+    "DeliveryTime": "5-10 Dni",
+    "Price": 2
+  },
+  {
+    "ShortName": "FREE",
+    "Description": "Darmowa dostawa!",
+    "DeliveryTime": "1-2 Tygodni",
+    "Price": 0
+  }
+]

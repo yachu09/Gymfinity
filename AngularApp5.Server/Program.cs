@@ -31,6 +31,9 @@ builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped(typeof(IGenericRepository<>), (typeof(GenericRepository<>)));
 builder.Services.AddScoped<IBasketRepository, BasketRepository>();
 builder.Services.AddScoped<ITokenService, TokenService>();
+builder.Services.AddScoped<IOrderService, OrderService>();
+
+builder.Services.AddAutoMapper(typeof(MappingProfiles));
 
 //adding db contexts
 builder.Services.AddDbContext<StoreContext>(options =>
@@ -102,13 +105,17 @@ builder.Services.Configure<ApiBehaviorOptions>(options =>
 
 var app = builder.Build();
 
-//user seeder
+//seeders and migrations config
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
-
+    var loggerFactory = services.GetRequiredService<ILoggerFactory>();
     try
     {
+        var context = services.GetRequiredService<StoreContext>();
+        await context.Database.MigrateAsync();
+        await StoreContextSeed.SeedAsync(context, loggerFactory);
+
         var userManager = services.GetRequiredService<UserManager<AppUser>>();
         var identityContext = services.GetRequiredService<UserContext>();
         await identityContext.Database.MigrateAsync();
@@ -117,7 +124,7 @@ using (var scope = app.Services.CreateScope())
     catch (Exception ex)
     {
         var logger = services.GetRequiredService<ILogger<Program>>();
-        logger.LogError(ex, "An error occurred while configuring the UserManager.");
+        logger.LogError(ex, "Error occured during migration");
     }
 }
 

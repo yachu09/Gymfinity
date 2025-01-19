@@ -1,5 +1,7 @@
 ﻿using AngularApp5.Server.Models;
+using AngularApp5.Server.Models.OrderAggregate;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
@@ -15,6 +17,9 @@ namespace AngularApp5.Server.Data
         public DbSet<ProductType> ProductsTypes { get; set; }
         public DbSet<ProductBrand> ProductsBrands { get; set; }
         public DbSet<CustomerBasket> Baskets { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
+        public DbSet<DeliveryMethod> DeliveryMethods { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -27,6 +32,9 @@ namespace AngularApp5.Server.Data
 
             modelBuilder.Entity<CustomerBasket>()
                 .HasKey(b => b.Id); // Ustaw klucz główny dla CustomerBasket
+
+            //modelBuilder.Entity<Address>().HasNoKey();
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }
     }
 }
