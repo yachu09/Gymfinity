@@ -7,6 +7,11 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { OrderTotalsComponent } from './components/order-totals/order-totals.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { StepperComponent } from './components/stepper/stepper.component';
+import { CdkStepperModule } from '@angular/cdk/stepper';
+import { TextInputComponent } from './components/text-input/text-input.component';
+import { BasketSummaryComponent } from './basket-summary/basket-summary.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -14,14 +19,19 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
   declarations: [
     PagingHeaderComponent,
     PagerComponent,
-    OrderTotalsComponent
+    OrderTotalsComponent,
+    StepperComponent,
+    TextInputComponent,
+    BasketSummaryComponent
   ],
   imports: [
     CommonModule,
     PaginationModule.forRoot(),
     CarouselModule.forRoot(),
     BsDropdownModule.forRoot(),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CdkStepperModule,
+    RouterModule
   ],
   exports: [
     PaginationModule,
@@ -30,7 +40,11 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
     CarouselModule,
     OrderTotalsComponent,
     ReactiveFormsModule,
-    BsDropdownModule
+    BsDropdownModule,
+    StepperComponent,
+    CdkStepperModule,
+    TextInputComponent,
+    BasketSummaryComponent
   ]
 })
 export class SharedModule { }

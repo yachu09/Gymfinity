@@ -6,32 +6,32 @@
       </div>
 
       <div class="form-label-group">
-        <input formControlName="email" type="email" id="inputEmail" class="form-control" placeholder="Adres Email">
-        <label for="inputEmail">Adres Email</label>
-        <span class="text-danger"
-              *ngIf="loginForm.get('email')?.invalid
-          && loginForm.get('email')?.touched
-          && loginForm.get('email')?.errors?.['required']">
-          Adres email jest wymagany
-        </span>
-        <span class="text-danger"
-              *ngIf="loginForm.get('email')?.invalid
-          && loginForm.get('email')?.touched
-          && loginForm.get('email')?.errors?.['pattern']">
-          Adres email jest niepoprawny
-        </span>
-      </div>
+    <input formControlName="email" type="email" id="inputEmail" class="form-control" placeholder="Adres Email">
+    <label for="inputEmail">Adres Email</label>
+    <span class="text-danger"
+          *ngIf="loginForm.get('email')?.invalid
+      && loginForm.get('email')?.touched
+      && loginForm.get('email')?.errors?.['required']">
+      Adres email jest wymagany
+    </span>
+    <span class="text-danger"
+          *ngIf="loginForm.get('email')?.invalid
+      && loginForm.get('email')?.touched
+      && loginForm.get('email')?.errors?.['pattern']">
+      Adres email jest niepoprawny
+    </span>
+  </div>
 
-      <div class="form-label-group">
-        <input formControlName="password" type="password" id="inputPassword" class="form-control" placeholder="Hasło">
-        <label for="inputPassword">Hasło</label>
-        <span class="text-danger"
-              *ngIf="loginForm.get('password')?.invalid
-          && loginForm.get('password')?.touched
-          && loginForm.get('password')?.errors?.['required']">
-          Hasło jest wymagane
-        </span>
-      </div>
+  <div class="form-label-group">
+    <input formControlName="password" type="password" id="inputPassword" class="form-control" placeholder="Hasło">
+    <label for="inputPassword">Hasło</label>
+    <span class="text-danger"
+          *ngIf="loginForm.get('password')?.invalid
+      && loginForm.get('password')?.touched
+      && loginForm.get('password')?.errors?.['required']">
+      Hasło jest wymagane
+    </span>
+  </div>
       <button [disabled]="loginForm.invalid" class="btn btn-lg btn-primary btn-block" type="submit">Zaloguj się!</button>
       <p class="mt-5 mb-3 text-muted text-center">© Gymfinity</p>
     </form>
