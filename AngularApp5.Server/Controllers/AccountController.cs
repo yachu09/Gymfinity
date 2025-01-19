@@ -52,6 +52,11 @@ namespace AngularApp5.Server.Controllers
         {
             var user = await userManager.FindUserByClaimsPrincipleWithAddressAsync(HttpContext.User);
 
+            if (user.Address == null)
+            {
+                return NoContent();
+            }
+
             return new AddressDto
             {
                 FirstName = user.Address.FirstName,

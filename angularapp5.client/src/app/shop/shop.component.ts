@@ -52,7 +52,7 @@ export class ShopComponent implements OnInit{
 
   getBrands() {
     this.shopService.getBrands().subscribe(response => {
-      this.brands = [{ id: 0, name: 'All' }, ...response];
+      this.brands = [{ id: 0, name: 'Wszystkie' }, ...response];
     }, error => {
       console.log(error);
     });
@@ -60,7 +60,7 @@ export class ShopComponent implements OnInit{
 
   getTypes() {
     this.shopService.getTypes().subscribe(response => {
-      this.types = [{ id: 0, name: 'All' }, ...response];
+      this.types = [{ id: 0, name: 'Wszystkie' }, ...response];
     }, error => {
       console.log(error);
     });

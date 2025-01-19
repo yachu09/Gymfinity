@@ -1,17 +1,16 @@
 <div class="container mt-5">
-  <div><i class="fa fa-check-circle fa-5x" style="color: green;"></i></div>
-  <h2>Thank you. Your order is confirmed</h2>
+  <div><i class="fa fa-check-circle fa-5x" style="color: lawngreen;"></i></div>
+  <h2>Dziękujemy! Twoje zamówienie zostało potwierdzone</h2>
   <p class="mb-4">
-    Your order has not shipped yet, but this is to be expected as we a
-    re not a real store!
+    Twoje zamówienie nie zostanie wysłane, bo nie jesteśmy prawdziwym sklepem :C
   </p>
   <button *ngIf="order"
           routerLink="/orders/{{order.id}}"
           class="btn btn-outline-success">
-    View your order
+    Pokaż zamówienie
   </button>
   <button *ngIf="!order"
           routerLink="/orders" class="btn btn-outline-success">
-    View your orders
+    Pokaż zamówienia
   </button>
 </div> 
