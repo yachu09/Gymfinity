@@ -33,7 +33,7 @@ namespace AngularApp5.Server.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Baskets");
+                    b.ToTable("Baskets", (string)null);
                 });
 
             modelBuilder.Entity("AngularApp5.Server.Models.OrderAggregate.DeliveryMethod", b =>
@@ -61,7 +61,7 @@ namespace AngularApp5.Server.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("DeliveryMethods");
+                    b.ToTable("DeliveryMethods", (string)null);
                 });
 
             modelBuilder.Entity("AngularApp5.Server.Models.OrderAggregate.Order", b =>
@@ -96,7 +96,7 @@ namespace AngularApp5.Server.Migrations
 
                     b.HasIndex("DeliveryMethodId");
 
-                    b.ToTable("Orders");
+                    b.ToTable("Orders", (string)null);
                 });
 
             modelBuilder.Entity("AngularApp5.Server.Models.OrderAggregate.OrderItem", b =>
@@ -120,7 +120,7 @@ namespace AngularApp5.Server.Migrations
 
                     b.HasIndex("OrderId");
 
-                    b.ToTable("OrderItems");
+                    b.ToTable("OrderItems", (string)null);
                 });
 
             modelBuilder.Entity("AngularApp5.Server.Models.Product", b =>
@@ -158,7 +158,7 @@ namespace AngularApp5.Server.Migrations
 
                     b.HasIndex("ProductTypeId");
 
-                    b.ToTable("Products");
+                    b.ToTable("Products", (string)null);
                 });
 
             modelBuilder.Entity("AngularApp5.Server.Models.ProductBrand", b =>
@@ -175,7 +175,7 @@ namespace AngularApp5.Server.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ProductsBrands");
+                    b.ToTable("ProductsBrands", (string)null);
                 });
 
             modelBuilder.Entity("AngularApp5.Server.Models.ProductType", b =>
@@ -192,7 +192,7 @@ namespace AngularApp5.Server.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ProductsTypes");
+                    b.ToTable("ProductsTypes", (string)null);
                 });
 
             modelBuilder.Entity("AngularApp5.Server.Models.OrderAggregate.Order", b =>
@@ -203,7 +203,7 @@ namespace AngularApp5.Server.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.OwnsOne("AngularApp5.Server.Models.OrderAggregate.Address", "ShipToAddress", b1 =>
+                    b.OwnsOne("AngularApp5.Server.Models.OrderAggregate.Order.ShipToAddress#AngularApp5.Server.Models.OrderAggregate.Address", "ShipToAddress", b1 =>
                         {
                             b1.Property<int>("OrderId")
                                 .HasColumnType("int");
@@ -234,7 +234,7 @@ namespace AngularApp5.Server.Migrations
 
                             b1.HasKey("OrderId");
 
-                            b1.ToTable("Orders");
+                            b1.ToTable("Orders", (string)null);
 
                             b1.WithOwner()
                                 .HasForeignKey("OrderId");
@@ -253,7 +253,7 @@ namespace AngularApp5.Server.Migrations
                         .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.OwnsOne("AngularApp5.Server.Models.OrderAggregate.ProductItemOrdered", "ItemOrdered", b1 =>
+                    b.OwnsOne("AngularApp5.Server.Models.OrderAggregate.OrderItem.ItemOrdered#AngularApp5.Server.Models.OrderAggregate.ProductItemOrdered", "ItemOrdered", b1 =>
                         {
                             b1.Property<int>("OrderItemId")
                                 .HasColumnType("int");
@@ -271,7 +271,7 @@ namespace AngularApp5.Server.Migrations
 
                             b1.HasKey("OrderItemId");
 
-                            b1.ToTable("OrderItems");
+                            b1.ToTable("OrderItems", (string)null);
 
                             b1.WithOwner()
                                 .HasForeignKey("OrderItemId");

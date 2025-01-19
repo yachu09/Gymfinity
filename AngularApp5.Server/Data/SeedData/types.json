@@ -1,22 +1,17 @@
 [
   {
-    "Id": 1,
     "Name": "Buty"
   },
   {
-    "Id": 2,
     "Name": "Koszulki"
   },
   {
-    "Id": 3,
     "Name": "Suplementy"
   },
   {
-    "Id": 4,
     "Name": "Hantle"
   },
   {
-    "Id": 5,
     "Name": "Sztangi"
   }
 ]
