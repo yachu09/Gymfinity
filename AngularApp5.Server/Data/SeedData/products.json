@@ -1,0 +1,82 @@
+[
+  {
+    "Name": "Adidas Biała Koszulka",
+    "Description": "Biała koszulka adasia mega dresiarska",
+    "Price": "69,9",
+    "ImageUrl": "http://localhost:5120/images/products/adidaswhitet.png",
+    "ProductTypeId": 2,
+    "ProductBrandId": 2
+  },
+  {
+    "Name": "Nike Air Force 1 Białe",
+    "Description": "Buty Nike af1 biale",
+    "Price": "149,99",
+    "ImageUrl": "http://localhost:5120/images/products/af1.png",
+    "ProductTypeId": 1,
+    "ProductBrandId": 1
+  },
+  {
+    "Name": "Hantel gym80 110lbs",
+    "Description": "ciezki jest",
+    "Price": 400,
+    "ImageUrl": "http://localhost:5120/images/products/hantel110.png",
+    "ProductTypeId": 4,
+    "ProductBrandId": 3
+  },
+  {
+    "Name": "Hantel gym80 5lbs",
+    "Description": "leciutki",
+    "Price": 20,
+    "ImageUrl": "http://localhost:5120/images/products/hantel5.png",
+    "ProductTypeId": 4,
+    "ProductBrandId": 3
+  },
+  {
+    "Name": "Nike Air Jordan 4",
+    "Description": "Butki jordanki",
+    "Price": "199,99",
+    "ImageUrl": "http://localhost:5120/images/products/aj4.png",
+    "ProductTypeId": 1,
+    "ProductBrandId": 1
+  },
+  {
+    "Name": "Kreatyna KFD",
+    "Description": "Kreatynka z najlepszej firmy",
+    "Price": "14,9",
+    "ImageUrl": "http://localhost:5120/images/products/kreatynakfd.png",
+    "ProductTypeId": 3,
+    "ProductBrandId": 6
+  },
+  {
+    "Name": "Nike Czarna Koszulka",
+    "Description": "Czarna koszulka z najacza",
+    "Price": "59,8",
+    "ImageUrl": "http://localhost:5120/images/products/nikeblackt.png",
+    "ProductTypeId": 2,
+    "ProductBrandId": 1
+  },
+  {
+    "Name": "Olimpijska Sztanga Eleiko",
+    "Description": "porządny gryf do targania klamotów",
+    "Price": "799,99",
+    "ImageUrl": "http://localhost:5120/images/products/eleiko20.png",
+    "ProductTypeId": 5,
+    "ProductBrandId": 4
+  },
+  {
+    "Name": "Sztanga Eleiko Damska",
+    "Description": "Babski gryf lżejszy jest",
+    "Price": "599,99",
+    "ImageUrl": "http://localhost:5120/images/products/eleiko15.png",
+    "ProductTypeId": 5,
+    "ProductBrandId": 4
+  },
+  {
+    "Name": "Kreatyna SFD",
+    "Description": "kreatyna z rtęciom",
+    "Price": "9,99",
+    "ImageUrl": "http://localhost:5120/images/products/kreatynasfd.png",
+    "ProductTypeId": 3,
+    "ProductBrandId": 5
+  }
+]
