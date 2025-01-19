@@ -10,6 +10,36 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\dist\angularapp5.client\3rdpartylicenses.txt" />
+    <Content Remove="wwwroot\dist\angularapp5.client\browser\assets\images\adidaswhitet.png" />
+    <Content Remove="wwwroot\dist\angularapp5.client\browser\assets\images\af1.png" />
+    <Content Remove="wwwroot\dist\angularapp5.client\browser\assets\images\aj4.png" />
+    <Content Remove="wwwroot\dist\angularapp5.client\browser\assets\images\logo.png" />
+    <Content Remove="wwwroot\dist\angularapp5.client\browser\chunk-4WBI4IRS.js" />
+    <Content Remove="wwwroot\dist\angularapp5.client\browser\chunk-6KCYH4GV.js" />
+    <Content Remove="wwwroot\dist\angularapp5.client\browser\chunk-6PW54DUW.js" />
+    <Content Remove="wwwroot\dist\angularapp5.client\browser\chunk-6W5D6BM3.js" />
+    <Content Remove="wwwroot\dist\angularapp5.client\browser\chunk-AUDLG5KQ.js" />
+    <Content Remove="wwwroot\dist\angularapp5.client\browser\chunk-FU7XBAZL.js" />
+    <Content Remove="wwwroot\dist\angularapp5.client\browser\chunk-GZFEQKYW.js" />
+    <Content Remove="wwwroot\dist\angularapp5.client\browser\chunk-HAO63C4I.js" />
+    <Content Remove="wwwroot\dist\angularapp5.client\browser\chunk-IU5AUCM7.js" />
+    <Content Remove="wwwroot\dist\angularapp5.client\browser\chunk-JQVSRORL.js" />
+    <Content Remove="wwwroot\dist\angularapp5.client\browser\chunk-RPYXK6Q3.js" />
+    <Content Remove="wwwroot\dist\angularapp5.client\browser\favicon.ico" />
+    <Content Remove="wwwroot\dist\angularapp5.client\browser\index.html" />
+    <Content Remove="wwwroot\dist\angularapp5.client\browser\main-XQYKR4M5.js" />
+    <Content Remove="wwwroot\dist\angularapp5.client\browser\media\fontawesome-webfont-3KIJVIEY.svg" />
+    <Content Remove="wwwroot\dist\angularapp5.client\browser\media\fontawesome-webfont-5GKVPAEF.woff2" />
+    <Content Remove="wwwroot\dist\angularapp5.client\browser\media\fontawesome-webfont-FMJ3VJ65.eot" />
+    <Content Remove="wwwroot\dist\angularapp5.client\browser\media\fontawesome-webfont-RJ6LE7IU.ttf" />
+    <Content Remove="wwwroot\dist\angularapp5.client\browser\media\fontawesome-webfont-Z4ARLA73.woff" />
+    <Content Remove="wwwroot\dist\angularapp5.client\browser\polyfills-FFHMD2TL.js" />
+    <Content Remove="wwwroot\dist\angularapp5.client\browser\styles-BLDZB3MQ.css" />
+    <Content Remove="wwwroot\dist\angularapp5.client\prerendered-routes.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper" Version="13.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.3.0" />
@@ -42,7 +72,36 @@
 
   <ItemGroup>
     <Folder Include="ClientApp\" />
-    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\dist\angularapp5.client\3rdpartylicenses.txt" />
+    <None Include="wwwroot\dist\angularapp5.client\browser\assets\images\adidaswhitet.png" />
+    <None Include="wwwroot\dist\angularapp5.client\browser\assets\images\af1.png" />
+    <None Include="wwwroot\dist\angularapp5.client\browser\assets\images\aj4.png" />
+    <None Include="wwwroot\dist\angularapp5.client\browser\assets\images\logo.png" />
+    <None Include="wwwroot\dist\angularapp5.client\browser\chunk-4WBI4IRS.js" />
+    <None Include="wwwroot\dist\angularapp5.client\browser\chunk-6KCYH4GV.js" />
+    <None Include="wwwroot\dist\angularapp5.client\browser\chunk-6PW54DUW.js" />
+    <None Include="wwwroot\dist\angularapp5.client\browser\chunk-6W5D6BM3.js" />
+    <None Include="wwwroot\dist\angularapp5.client\browser\chunk-AUDLG5KQ.js" />
+    <None Include="wwwroot\dist\angularapp5.client\browser\chunk-FU7XBAZL.js" />
+    <None Include="wwwroot\dist\angularapp5.client\browser\chunk-GZFEQKYW.js" />
+    <None Include="wwwroot\dist\angularapp5.client\browser\chunk-HAO63C4I.js" />
+    <None Include="wwwroot\dist\angularapp5.client\browser\chunk-IU5AUCM7.js" />
+    <None Include="wwwroot\dist\angularapp5.client\browser\chunk-JQVSRORL.js" />
+    <None Include="wwwroot\dist\angularapp5.client\browser\chunk-RPYXK6Q3.js" />
+    <None Include="wwwroot\dist\angularapp5.client\browser\favicon.ico" />
+    <None Include="wwwroot\dist\angularapp5.client\browser\index.html" />
+    <None Include="wwwroot\dist\angularapp5.client\browser\main-XQYKR4M5.js" />
+    <None Include="wwwroot\dist\angularapp5.client\browser\media\fontawesome-webfont-3KIJVIEY.svg" />
+    <None Include="wwwroot\dist\angularapp5.client\browser\media\fontawesome-webfont-5GKVPAEF.woff2" />
+    <None Include="wwwroot\dist\angularapp5.client\browser\media\fontawesome-webfont-FMJ3VJ65.eot" />
+    <None Include="wwwroot\dist\angularapp5.client\browser\media\fontawesome-webfont-RJ6LE7IU.ttf" />
+    <None Include="wwwroot\dist\angularapp5.client\browser\media\fontawesome-webfont-Z4ARLA73.woff" />
+    <None Include="wwwroot\dist\angularapp5.client\browser\polyfills-FFHMD2TL.js" />
+    <None Include="wwwroot\dist\angularapp5.client\browser\styles-BLDZB3MQ.css" />
+    <None Include="wwwroot\dist\angularapp5.client\prerendered-routes.json" />
   </ItemGroup>
 
 </Project>

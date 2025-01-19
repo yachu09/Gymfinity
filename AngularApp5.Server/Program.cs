@@ -21,9 +21,10 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAngularApp", policy =>
     {
-        policy.WithOrigins("http://localhost:52523") //angular app address
+        policy.WithOrigins("https://localhost:52523") //angular app address
               .AllowAnyHeader()
-              .AllowAnyMethod();
+              .AllowAnyMethod()
+              .AllowCredentials();
     });
 });
 
@@ -156,6 +157,7 @@ app.UseCors("AllowAngularApp");
 
 app.MapControllers();
 
-app.MapFallbackToFile("/index.html");
+// Fallback to Angular's index.html
+app.MapFallbackToFile("index.html");
 
 app.Run();

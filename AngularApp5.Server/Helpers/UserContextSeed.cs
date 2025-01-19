@@ -21,7 +21,7 @@ namespace AngularApp5.Server.Helpers
                         Street = "Bobstreet",
                         City = "Bobznań",
                         State = "Wielkopolskie",
-                        Zipcode = "69-420"
+                        Zipcode = "69-888"
                     }
                 };
 
